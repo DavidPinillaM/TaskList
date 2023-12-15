@@ -30,6 +30,7 @@ type TaskItem = {
    //Esta funcion recibe el parametro text que contiene el nuevo valor del texto que el usuario ha ingresado en el TextInput
    const onHandlerChange = text => {
      setTask(text);
+   //e encarga de controlar si el botón debería estar habilitado o deshabilitado según el contenido del texto ingresado por el usuario. Si el texto está vacío o solo contiene espacios en blanco, el botón se deshabilita; de lo contrario, se habilita.  
      setIsButtonDisabled(!text.trim());
    };
 
@@ -79,6 +80,7 @@ type TaskItem = {
 
    return (
      <View style={styles.containerGeneral}>
+      {/*Mediante ImageBackground se coloca una imagen de fondo*/}
        <ImageBackground
          source={require('../src/assets/wallpaper/fondoMadera.jpeg')}
          style={styles.wallpaper}>
@@ -99,7 +101,7 @@ type TaskItem = {
            <View style={styles.containerTitle}>
              <Text style={styles.textTitle}>Tareas Pendientes</Text>
            </View>
-           <View style={styles.fffff}>
+           <View style={styles.renderContainer}>
              <TaskList tasks={tasks} onHandlerModal={onHandlerModal} />
              <CustomModal
                onHandleCancel={onHandleCancel}
@@ -147,7 +149,7 @@ shadowRadius: 4.65,
 
 elevation: 7,
     },
-    fffff: {
+    renderContainer: {
       marginBottom: 200
     }
   });

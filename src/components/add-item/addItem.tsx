@@ -10,12 +10,12 @@ export const AddItem = ({placeholder, task, onHandlerChange, buttonText, onHandl
         style={styles.input}
         placeholder={placeholder}
         placeholderTextColor={colors.placeholderTextColor}
+      //Se asegura que el texto mostrado en el TextInput siempre sea el valor actual del estado task. 
         value={task}
         //(onChangeText) ---> me permite acceder al valor del texto directamente
         //onChangeText={text => setTask(text)}
         onChangeText={onHandlerChange}
       />
-      {/*(disabled) cuando el usuario no ingrese nada en el campo del texto el boton se mantendra desabilitado*/}
       <TouchableOpacity onPress={onHandlerSubmit} disabled={isButtonDisabled} style={[styles.button, style]}>
         <Text style={styles.textButton}>{buttonText}</Text>
       </TouchableOpacity>
